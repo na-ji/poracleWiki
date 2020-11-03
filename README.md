@@ -1,24 +1,21 @@
 ![logo](https://raw.githubusercontent.com/KartulUdus/poracleWiki/master/assets/PoracleJSWiki.png)
+# Poracle Documentation
 
-#### Introduction
+## Introduction
 
 This project is meant to serve as a WIKI page source for [PoracleJS](https://github.com/KartulUdus/PoracleJS/).  
-It contains all the need Vue files to build a local version for Contributing reasons.  
 
-#### Links
+## Links
 
-- [WIKI](https://wiki.poracle.world/) - Live version  
+- [WIKI](https://muckelba.github.io/poracleWiki/) - Live version  
 - [Discord](https://discord.gg/AathPCp) - Place to Discuss stuff   
 
-### Install
-- [Install NodeJS](https://nodejs.org/en/) Recommended LTS version.  
-- Fork and Clone this project: `git clone https://github.com/KartulUdus/poracleWiki.git`  
-- Install dependencies `npm install`
-- Run a dev environment: `npm run dev`  
+## Install
 
-Once done you can access your running build on `localhost:7777`.  
-it will automatically watch for changes you make and build a fresh version.  
-Once you are happy with your changes, commit them to your fork and open a PR against original.  
+Have a look at the official GitHub Documentation about a [local Jekyll environment](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll)
+
+Once done you can access your running build on `localhost:4000`.  
+And when you are happy with your changes, commit them to your fork and open a PR against original.  
 
 
 Many thanks
