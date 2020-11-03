@@ -6,80 +6,152 @@ layout: default
 
 # Webhook Examples
 
-## Egg
-```json
-   {  
-      "message":{  
-         "end":1645080658,
-         "move_2":0,
-         "gym_id":"GYM_ID",
-         "longitude":59.784341,
-         "pokemon_id":0,
-         "cp":0,
-         "form":0,
-         "sponsor_id":false,
-         "spawn":1545074358,
-         "is_exclusive":false,
-         "start":1545077958,
-         "move_1":0,
-         "gym_name":"Unknown",
-         "level":4,
-         "latitude":27.93149,
-         "team_id":1
-      },
-      "type":"raid"
-   }
-   ```
+## MAD
 
-## Pokemon not encountered
+### Raid
 ```json
-   {  
-      "message":{  
-         "height":null,
-         "individual_attack":null,
-         "encounter_id":"10888713456914754602",
-         "move_2":null,
-         "longitude":24.7324804149242,
-         "verified":false,
-         "disappear_time":1545075561,
-         "costume":0,
-         "pokemon_id":102,
-         "cp":null,
-         "gender":1,
-         "form":0,
-         "pokestop_id":"None",
-         "first_seen":1545074361,
-         "spawnpoint_id":"2E52B717",
-         "last_modified_time":1545074361,
-         "individual_defense":null,
-         "pokemon_level":null,
-         "move_1":null,
-         "weather":0,
-         "weight":null,
-         "individual_stamina":null,
-         "latitude":59.8787900215465
-      },
-      "type":"pokemon"
-   }
+{
+    "type": "raid",
+    "message": {
+      "latitude": xxx,
+      "longitude": xxx,
+      "level": 6,
+      "pokemon_id": 18,
+      "team_id": 2,
+      "cp": 49801,
+      "start": unixtimestamp,
+      "end": unixtimestamp,
+      "name": "",
+      "evolution": 1,
+      "move_1": 239,
+      "move_2": 45,
+      "gym_id": "",
+      "url": "",
+      "form": 0,
+      "is_ex_raid_eligible": false,
+      "is_exclusive": false,
+      "gender": 2,
+      "costume": 0
+    }
+  }
 ```
 
-## gym-details
+### Egg
+```json
+  {
+    "type": "raid",
+    "message": {
+      "latitude": xxx,
+      "longitude": xxx,
+      "level": 3,
+      "pokemon_id": 0,
+      "team_id": 3,
+      "cp": 0,
+      "start": unixtimestamp,
+      "end": unixtimestamp,
+      "name": "",
+      "evolution": 0,
+      "move_1": 1,
+      "move_2": 2,
+      "gym_id": "",
+      "url": "",
+      "is_ex_raid_eligible": false,
+      "is_exclusive": false
+    }
+  }
+```
+
+### Pokemon with IV
+```json
+  {
+    "type": "pokemon",
+    "message": {
+      "encounter_id": xxx,
+      "pokemon_id": 434,
+      "spawnpoint_id": xxx,
+      "latitude": xxx,
+      "longitude": xxx,
+      "disappear_time": unixtimestamp,
+      "verified": true,
+      "cp_multiplier": 0.481685,
+      "pokemon_level": 13,
+      "form": 791,
+      "costume": 0,
+      "cp": 380,
+      "individual_attack": 8,
+      "individual_defense": 8,
+      "individual_stamina": 5,
+      "move_1": 202,
+      "move_2": 90,
+      "height": 0.433733,
+      "weight": 27.6922,
+      "gender": 2,
+      "rarity": 1,
+      "base_catch": 0.51901144,
+      "great_catch": 0.6664184,
+      "ultra_catch": 0.76865
+    }
+  }
+```
+
+### Pokemon without IV
+```json
+  {
+    "type": "pokemon",
+    "message": {
+      "encounter_id": xxx,
+      "pokemon_id": 434,
+      "spawnpoint_id": xxx,
+      "latitude": xxx,
+      "longitude": xxx,
+      "disappear_time": unixtimestamp,
+      "verified": true,
+    }
+  }
+```
+
+### Pokestop Invasion
 
 ```json
-[  
-   {  
-      "message":{  
-         "slots_available":0,
-         "name":"Unknown",
-         "team":1,
-         "sponsor_id":false,
-         "url":"http://lh6.ggpht.com/gr-9IasTfoO2CCRN-eIGCp25dK16D25oNaUYHeL4l6aoAXri1eOLeLKxNx-0RKh7irltPyF4VghjFEi7Zibtxw",
-         "longitude":59.612006,
-         "id":"e01c464a0ed84c4d8920a2ad86b0741f.16",
-         "in_battle":false,
-         "latitude":24.604975
-      },
-      "type":"gym_details"
-   }
-]
+  {
+    "type": "pokestop",
+    "message": {
+      "name": "",
+      "pokestop_id": "",
+      "latitude": xxx,
+      "longitude": xxx,
+      "updated": unixtimestamp,
+      "last_modified": unixtimestamp,
+      "url": "",
+      "incident_start": unixtimestamp,
+      "incident_expiration": unixtimestamp,
+      "incident_grunt_type": 44
+    }
+  }
 ```
+
+
+### Pokestop Lure
+
+```json
+  {
+    "type": "pokestop",
+    "message": {
+      "name": "",
+      "pokestop_id": "",
+      "latitude": xxx,
+      "longitude": xxx,
+      "updated": unixtimestamp,
+      "last_modified": unixtimestamp,
+      "url": "",
+      "lure_expiration": unixtimestamp,
+      "lure_id": xxx
+    }
+  }
+```
+
+Invasions and Lures can be in the same payload.
+
+## RDM
+
+Please someone tell me.
