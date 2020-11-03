@@ -1,6 +1,6 @@
 ---
 title: Commands
-nav_order: 8
+nav_order: 6
 layout: default
 parent: v3
 ---

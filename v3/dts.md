@@ -371,5 +371,5 @@ Any of the fields can be customized with the following:
 
 This is the message that is sent to newly added users via DM. There are no dynamic variables in this message.  
 
-the "fields" without title and description are sent to users upon `!help` command
+The "fields" without title and description are sent to users upon `!help` command
 {% endraw %}

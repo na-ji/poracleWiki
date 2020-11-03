@@ -1,9 +1,15 @@
+---
+title: Telegram Bot
+nav_order: 6
+layout: default
+---
+
 # Creating a Telegram bot & getting a token
 
 
-#### Talk to @botFather
+## Talk to @botFather
 
-Telegram has a bot for creating bots :), find and talk to @botFather
+Telegram has a bot for creating bots :), find and talk to [@BotFather](https://t.me/botfather)
 
 Our conversation went something like this:
 ```
@@ -32,12 +38,9 @@ Next create a new group in telegram, name it and invite your bot to it.
 
 This channel name can be used as `TLG_CHANNEL=newGroupName` so this will server as the chat where users can register with the `/poracle` command
 
-
-
 There are a couple of options to find out your id for `TLG_ADMINS=["201234515"]`.
 
 You can:
 1) run the bot first without admins and run the `/adminid` command
 2) Run without admins, register in the channel with `/poracle` and check your database for humans table id column
 3) Interact with the bot and navigate to `https://api.telegram.org/bot462xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/getUpdates` to find your id
-

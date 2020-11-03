@@ -156,7 +156,7 @@ IV_COLORS=
 | Option        | Value         | 
 | ------------- |-------------| 
 |DISCORD_ENABLED| Activate Discord support|
-|DISCORD_TOKEN | Your [Discordbot Token](discordbot.html). Has to be in [ "square.brackets.and.quotes" ]|
+|DISCORD_TOKEN | Your [Discordbot Token](../discordbot.html). Has to be in [ "square.brackets.and.quotes" ]|
 |ADMINS| List of discord user id's that can register channels and run admin commands.|
 |REGISTER_CHANNEL | The text channel where registering `!poracle` is possible. |
 |REGISTER_ROLE| Role name that automatically registers or unregisters the user to !poracle|

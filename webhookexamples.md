@@ -1,8 +1,7 @@
 ---
 title: Webhook Examples
-nav_order: 10
+nav_order: 7
 layout: default
-parent: v3
 ---
 
 # Webhook Examples

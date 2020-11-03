@@ -1,34 +1,41 @@
+---
+title: Database
+nav_order: 2
+layout: default
+parent: v4
+---
+
 # Database
 
-Poracle stores a record or users and their trackings in a database.  
-  
-*THIS IS NOT THE DATABASE FOR YOUR SCANNER!*
-  
-Please do not use your scanner database for your [PoracleJS](README.md)
+Poracle stores a record or users and their trackings in a database.
 
-#### Sqlite 
+You can choose between Sqlite (default) and MySQL/MariaDB
+
+**Please do not use your scanner database for PoracleJS!**
+
+## Sqlite 
 
 Default option for storing trackings is a sqlite file. 
 if your database client is not configured to something else, this would be automatically created when you first launch the bot or migrate from V3
 
-#### MySql install
+## MySql 
 
-Easiest way to install a mariadb database, is to use [Docker](https://www.docker.com/get-docker).  
-Once you have [Docker](https://www.docker.com/get-docker) installed, you can deploy a mariaDB container with:  
-```
-docker run --name poracle-mariadb --publish 3306:3306 -e MYSQL_PASSWORD=poraclePassword -e MYSQL_ROOT_PASSWORD=someReallyDifficultAndLongPassword -e MYSQL_USER=poracle -e MYSQL_DATABASE=poracle -d mariadb:latest --max-connections=256
-```
-This will launch the latest MariaDB container that you can access with  
-```json
-DB_HOST=127.0.0.1
-DB_USER=poracle
-DB_PASSWORD=poraclePassword
-DB_DATABASE=poracle
-DB_PORT=3306
-DB_CONNECTION_LIMIT=20
-DB_CONNECTION_TIMEOUT=60
-``` 
-in your config.  
+Just go ahead and create a new DB user and database:
 
-To remove this example container, you can run `docker stop poracle-mariadb && docker rm poracle-mariadb`
+### Creating a Database and a User
 
+If Poracle connects to the database locally, you can give it only local access rights:
+   ```sql
+   CREATE DATABASE poracle;
+   CREATE USER 'poracle'@'localhost' IDENTIFIED BY 'poraclePassword';
+   GRANT ALL PRIVILEGES ON poracle . * TO 'poracle'@'localhost';
+   exit
+   ```
+   
+Alternatively, you can grant your user access from anywhere:
+   ```sql
+   CREATE DATABASE poracle;
+   CREATE USER 'poracle'@'%' IDENTIFIED BY 'poraclePassword';
+   GRANT ALL PRIVILEGES ON poracle . * TO 'poracle'@'%';
+   exit
+   ```

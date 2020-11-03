@@ -1,8 +1,13 @@
+---
+title: Commands
+nav_order: 6
+layout: default
+parent: v4
+---
+
 # Commands
 
-Depending if you're using Discord or Telegram, your command prefix will be `PREFIX` (config.discord.prefix)
-, but **always** `/` for Telegram.  
-
+Depending if you're using Discord or Telegram, your command prefix will be `PREFIX` (config.discord.prefix), but **always** `/` for Telegram.
 
 
 PoracleJS will react or reply to valid commands with either: 
@@ -71,7 +76,7 @@ You can also use multiple areas in the same command (separated by spaces) and on
 
 `!tracked` Shows a details list of Monsters, Raids, Eggs and quests user is tracking. Should the message exceed 6000 charecters, it will be uploaded into hastebin and a link will be sent to user. If hastebin is down (like it often is), the bot will create a temporary file and upload it to discord as a reply.
 
-## Wild Spawn Tracking commands
+## Tracking commands
 
 ### !track
 
@@ -85,7 +90,7 @@ available filters:
 |           |`!track pikachu`                 | No filters, tracks pikachu within an area you are tracking in |
 |d          |`!track pikachu d750`            | Tracks pikachu within 750 meters of location |
 |iv         |`!track pikachu iv90`            | Tracks pikachu inside a tracked area with a minimum IV of 90%  |
-|maxiv      |`!track pikachu maxiv0 iv0`      | Tracks pikachu with 0% IV. iv filter also is necessary to avoid unencoungered mon (iv on those is -1)  |
+|maxiv      |`!track pikachu maxiv0`          | Tracks pikachu with 0% IV   |
 |cp         |`!track shuckle cp300`           | Tracks shuckle with a minimum CP of 300|
 |form       |`!track unown forma formquestion`| Tracks unown with questionmark form or form A. Can only be used with one monster at a time. Monster needs to have forms|
 |maxcp      |`!track shuckle maxcp400`        | Tracks shuckle with a maximum CP of 400 |
@@ -110,8 +115,6 @@ available filters:
 `!untrack pikachu raichu` This command would remove tracking for Pikachu and Raichu. 
 
 Any monster name can be used in the same command or alternatively `!untrack everything` would remove all monster tracking.
-
-## Raid Tracking commands
 
 ### !raid
 
@@ -160,8 +163,6 @@ Available filters:
 `!egg remove level2` Removes tracking of level 2 raid eggs.  
 Level is required to remove egg tracking.
 
-## Quest Tracking commands
-
 ### !quest
 
 `!quest pikachu poke ball stardust d10000` Tracks quests that would reward a pikachu, pokéballs or stardust within 10km
@@ -182,9 +183,7 @@ Available filters:
 `!quest remove all pokemon pinap berry stardust`  
 Removes quest tracking for all pokemon, pinap berries and strdust.
 
-## Rocket Invasion Tracking commands
-
-## !invasion
+### !invasion
 
 `!invasion fire mixed d1000` Tracks all invasions of mixed AND fire types on pokestops within 1 km
 `!invasion rock female` Tracks all rock invasions where the grunt is a female

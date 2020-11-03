@@ -1,4 +1,11 @@
-   # Custom Messages
+---
+title: Customize Alarm Messages
+nav_order: 5
+layout: default
+parent: v4
+---
+
+# Custom Messages
 
 ## dts.json
 
@@ -6,14 +13,10 @@ All alarm messages can be customized via the `./config/dts.json` file.
 
 A useful visualizer can be found [HERE](https://leovoel.github.io/embed-visualizer/) 
 
-These are separated by the type of alarm [monster, monsterNoIv, raid, egg, quest].
-
-Each of these categories has 5 default templates (by versbosity of alarm) with default alarm being "3" for each type.  
-
 Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url.  
 
 ### Monster alarms
-
+{% raw %}
 ```json
 {
     "id": 1,
@@ -36,7 +39,7 @@ Sometimes it's necessary to use three curly braces on each side. This avoids url
 For monsters without IV information, you can specify a different message.
 
 ```json
-  {
+{
     "id": 1,
     "type": "monsterNoIv",
     "default": true,
@@ -111,7 +114,7 @@ Any of the fields can be customized with the following:
 ### Raid alarms
 
 ```json
-   {
+  {
     "id": 1,
     "type": "raid",
     "default": true,
@@ -185,7 +188,7 @@ Any of the fields can be customized with the following:
 ### Egg alarms
 
 ```json
-  {
+ {
     "id": 1,
     "type": "egg",
     "default": true,
@@ -392,15 +395,11 @@ Any of the fields can be customized with the following:
         "fields": [
           {
             "name": "General commands",
-            "value": "`{{prefix}}poracle`: Adds you to database and enables tracking \n`{{prefix}}unregister`: Removes you from tracking \n`{{prefix}}stop`: Temporarily stops alarms \n`{{prefix}}start`: Re-enables alarms \n`{{prefix}}location yourArea`: Searches for yourArea and sets it as your location \n`{{prefix}}area add somePlace`: Sets one or multiple areas where to receive alarms from, areas need to be configured by admin \n`{{prefix}}area remove somePlace`: Removes a configured area \n `{{prefix}}tracked`: Shows you what you are currently configured to be notified about. \n `{{prefix}}help`: Shows this message"
-          },
-          {
-            "name": "**Basic Examples**",
-            "value": "You probably want to start off with something like these 4 commands. Change the distances (d=metres) to suit yourself. \n `{{prefix}}location 123 Common Road, Town, Region` \n `{{prefix}}track archen axew gible gabite cranidos deino zweilous litwick lampent riolu darumaka unown d1500` \n `{{prefix}}raid timburr litwick d1500` \n `{{prefix}}track everything iv100 d1000`"
+            "value": "`{{prefix}}poracle`: Adds you to database and enables tracking \n`{{prefix}}unregister`: Removes you from tracking \n`{{prefix}}stop`: Temporarily stops alarms \n`{{prefix}}start`: Re-enables alarms \n`{{prefix}}location yourArea`: Searches for yourArea and sets it as your location \n`{{prefix}}area add somePlace`: Sets one or multiple areas where to receive alarms from, areas need to be configured by admin \n`{{prefix}}area remove somePlace`: Removes a configured area"
           },
           {
             "name": "Monster tracking commands",
-            "value": "The command needs to include at least one monster and any amount of filters. E.g. \n `{{prefix}}track snorlax lapras d500 iv50 maxiv90 cp1000 level15`: This command would alert you about Snorlax and Lapras within 500 meters of your location, with an IV between 50% - 90%, of at least level 15, and a minimum CP of 1000. \n`{{prefix}}untrack lapras vileplume`: will remove tracking for lapras and vileplume \n See more options and details at [the manual](https://kartuludus.github.io/PoracleJS/#/commands?id=track)"
+            "value": "`{{prefix}}track snorlax lapras d500 iv50 maxiv90 cp1000 level15`: Any arguments are optional, this command would alert you about snorlax and lapras within 500 meters of your location or inside an added area. The set filters require them to have IV between 50% - 90% be at least level 15 and minimum CP of 1000 \n`{{prefix}}untrack lapras vileplume`: will remove tracking for lapras and vileplume"
           },
           {
             "name": "Raid tracking commands",
@@ -412,18 +411,18 @@ Any of the fields can be customized with the following:
           },
           {
             "name": "Quest tracking commands",
-            "value": "`{{prefix}}quest porygon pikachu rare_candy silver_pinap_berry d500`: Any arguments are optional, this command would alert you about Quests obtainable within 500m of your location with porygon, pikachu, rare candy, or silver pinaps as rewards \n `{{prefix}}quest remove all_items`: Removes tracking for all item based quests. Can also use `all_pokemon` or `stardust`"
+            "value": "`{{prefix}}quest porygon pikachu poke ball d500 `: Any arguments are optional, this command would alert you about Quests obtainable within 500m of your location with porygon, pikachu or pokeballs as rewards \n `{{prefix}}quest remove all items` Removes tracking for all item based quests. Can also use `all pokemon` or `stardust`"
           },
           {
             "name": "Invasion tracking commands",
-            "value": "`{{prefix}}invasion d500 dragon mixed`: Any arguments are optional, this command would alert you about Team Rocket Incidents within 500m of your location if the grunt type was mixed or dragon. You can use any pokemon type name.\n `{{prefix}}invasion remove dragon`: Removes tracking for specified Team Rocket Incidents."
+            "value": "`{{prefix}}invasion template3 d500 dragon mixed`: Any arguments are optional, this command would alert you about Team Rocket Incidents within 500m of your location if the grunt type was mixed or dragon. You can use any pokemon type name.\n `{{prefix}}invasion remove` Removes tracking for all Team Rocket Incidents."
           }
         ]
       }
     }
   }
 ```
-
+{% endraw %}
 This is the message that is sent to newly added users via DM. There are no dynamic variables in this message.  
 
-the "fields" without title and description are sent to users upon `!help` command
+The "fields" without title and description are sent to users upon `!help` command
