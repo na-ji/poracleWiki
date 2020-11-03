@@ -1,0 +1,29 @@
+title: Poracle Documentation
+description: Documentation for Poracle
+url: "https://muckelba.github.io/poracleWiki" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+show_downloads: false
+color_scheme: "nil" # Use "dark" for darkmode
+footer_content: "Copyright &copy; 2020."
+
+
+# Build settings
+markdown: kramdown
+theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
+plugins:
+  - jekyll-feed
+  - jemoji
+ 
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

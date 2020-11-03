@@ -1,3 +1,10 @@
+---
+title: GMaps
+nav_order: 4
+layout: default
+parent: v3
+---
+
 # Google Maps
 
 #### Api key

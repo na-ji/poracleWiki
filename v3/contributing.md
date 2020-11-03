@@ -1,3 +1,10 @@
+---
+title: Contributing
+nav_order: 9
+layout: default
+parent: v3
+---
+
 # Contributing to PoracleJS
 
 ## I need help

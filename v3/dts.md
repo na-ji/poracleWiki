@@ -1,25 +1,30 @@
-   # Custom Messages
+---
+title: Customize Alarm Messages
+nav_order: 5
+layout: default
+parent: v3
+---
 
-#### dts.json
+# dts.json
 
-All alarm messages can be customized via the `./config/dts.json` file.  
+All alarm messages can be customized via the `./config/dts.json` file.
 
-A useful visualizer can be found [HERE](https://leovoel.github.io/embed-visualizer/) 
+A useful visualizer can be found [HERE](https://leovoel.github.io/embed-visualizer/).
 
-These are separated by the type of alarm [monster, monsterNoIv, raid, egg, quest].
+These are separated by the type of alarm [monster, monsterNoIv, raid, egg, quest, incident].
 
-Each of these categories has 5 default templates (by versbosity of alarm) with default alarm being "3" for each type.  
+Each of these categories has 5 default templates (by versbosity of alarm) with **default alarm being "3" for each type**.
 
-Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url.  
+Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url.
 
-###### Monster alarms
-
+## Monster alarms
+{% raw %}
 ```json
   "monster": {
   "3":{
       "embed": {
         "title": "a wild {{{name}}} has appeared!",
-        "description": "It weighs {{weight}}kg and will despawn at {{time}}, you have {{tthm}}m {{tths}}s left \nPerfection: **{{iv}}%** , ({{atk}}/{{def}}/{{sta}}) \n{{move1}}|{{move2}} Level:{{level}} (cp:**{{cp}}**)\naddress: {{addr}} ",
+        "description": "It weights {{weight}}kg and will despawn at {{time}}, you have {{tthm}}m {{tths}}s left \nPerfection: **{{iv}}%** , ({{atk}}/{{def}}/{{sta}}) \n{{move1}}|{{move2}} Level:{{level}} (cp:**{{cp}}**)\naddress: {{addr}} ",
         "url": "{{{rocketmap}}}",
         "color": "{{color}}",
         "thumbnail": {
@@ -35,7 +40,6 @@ Sometimes it's necessary to use three curly braces on each side. This avoids url
       }
     }
   }
-
 ```
 
 For monsters without IV information, you can specify a different message.
@@ -58,7 +62,7 @@ For monsters without IV information, you can specify a different message.
 Any of the fields can be customized with the following:
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+| --------------- |-------------|
 |{{id}}| Pokemon Id|
 |{{name}}| Monsters name|
 |{{time}}| Disappear time|
@@ -108,7 +112,7 @@ Any of the fields can be customized with the following:
 |{{areas}}| Matched geofence area names for alert|
 
 
-###### Raid alarms
+## Raid alarms
 
 ```json
   
@@ -126,7 +130,7 @@ Any of the fields can be customized with the following:
 ```
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+| --------------- |-------------|
 |{{id}}| Pokémon id|
 |{{name}}| Monsters name|
 |{{time}}| Disappear time|
@@ -174,7 +178,7 @@ Any of the fields can be customized with the following:
 |{{areas}}| Matched geofence area names for alert|
 
 
-###### Egg alarms
+## Egg alarms
 
 ```json
   "egg":{
@@ -197,7 +201,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+| --------------- |-------------|
 |{{time}}| Disappear time|
 |{{tthh}}| Full hours until raid ends|
 |{{tthm}}| Full minutes until raid ends|
@@ -229,7 +233,7 @@ Any of the fields can be customized with the following:
 |{{flagemoji}}|Country flag emoji for location|
 
 
-###### Quest alarms
+## Quest alarms
 
 ```json
 "quest":{
@@ -251,7 +255,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+| --------------- |-------------|
 |{{now}}| Current Timestamp|
 |{{questType}}| The type of quest (for example: battle in 3 raids|
 |{{conditions}}| Extra conditions (for example: you must win these battles|
@@ -282,7 +286,7 @@ Any of the fields can be customized with the following:
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{flagemoji}}|Country flag emoji for location|
 
-###### Invasion alarms
+## Invasion alarms
 
 ```json
 "incidents": {
@@ -302,7 +306,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+| --------------- |-------------|
 |{{time}}| Invasion end time|
 |{{tthh}}| Full hours until invasion ends|
 |{{tthm}}| Full minutes until invasion ends|
@@ -336,7 +340,7 @@ Any of the fields can be customized with the following:
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{flagemoji}}|Country flag emoji for location|
 
-###### Greeting Message
+## Greeting Message
 
 ```json
   "greeting": {
@@ -368,3 +372,4 @@ Any of the fields can be customized with the following:
 This is the message that is sent to newly added users via DM. There are no dynamic variables in this message.  
 
 the "fields" without title and description are sent to users upon `!help` command
+{% endraw %}
